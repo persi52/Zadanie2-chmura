@@ -1,11 +1,11 @@
 version: "3"
 services:
   client:
-    image: "spg51/lab:fib-client"
+    image: "persi52/zadanie2-client"
     mem_limit: 128m
     hostname: client
   server:
-    image: "spg51/lab:fib-server"
+    image: "persi52/zadanie2-server"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "spg51/lab:fib-worker"
+    image: "persi52/zadanie2-worker"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "spg51/lab:fib-nginx"
+    image: "persi52/zadanie2-nginx"
     mem_limit: 128m
     hostname: nginx
     ports:
